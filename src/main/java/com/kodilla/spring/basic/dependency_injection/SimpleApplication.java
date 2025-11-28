@@ -14,7 +14,7 @@ public class SimpleApplication {
         }
     }
 
-    private boolean checkReceiver(String receiver) {
+    boolean checkReceiver(String receiver) {
         return receiver != null && !receiver.isEmpty();
     }
 }
