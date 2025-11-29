@@ -25,7 +25,7 @@ The project was developed in **IntelliJ IDEA** as part of the learning path for 
 
 This repository includes **Java 21 + Spring Boot 3.2.5** code demonstrating how Spring handles:
 
-### ✔ Dependency Injection (DI)
+### Dependency Injection (DI)
 Three DI methods implemented:
 - constructor injection (recommended)
 - field injection (`@Autowired`)
@@ -37,10 +37,10 @@ With exercises in:
 
 ---
 
-### ✔ Bean Management
+### Bean Management
 Two ways of creating beans:
 
-**1️⃣ Annotation-based beans**
+**Annotation-based beans**
 
 Using:
 - `@Component`
@@ -51,14 +51,14 @@ Using:
 Located in:
 `spring_dependency_injection/`
 
-**2️⃣ Manual configuration using @Bean**
+**Manual configuration using @Bean**
 
 Implemented in:
 `spring_configuration/AnimalFactory.java`
 
 ---
 
-### ✔ Bean Qualifiers
+### Bean Qualifiers
 When multiple implementations exist:
 - `@Primary`
 - `@Qualifier`
@@ -69,7 +69,7 @@ Examples found in:
 
 ---
 
-### ✔ Bean Scopes
+### Bean Scopes
 Implemented scopes:
 - **singleton** (default)
 - **prototype** (new instance each time)
@@ -82,15 +82,15 @@ Examples:
 
 ## Project Structure
 ```
-kodilla-spring-basic
-│ build.gradle
-│ gradlew
-│ gradlew.bat
-│
-├── src
-│ ├── main/java/com/kodilla/spring/basic
+kodilla-spring-basic/
+├── build.gradle
+├── gradlew / gradlew.bat
+├── LICENSE
+├── README.md
+├── src/
+│ ├── main/java/com/kodilla/spring/basic/
+│ │ ├── Main.java
 │ │ ├── SpringBasicRunner.java
-│ │ │
 │ │ ├── dependency_injection/
 │ │ │ ├── MessageService.java
 │ │ │ ├── EmailMessageService.java
@@ -98,7 +98,6 @@ kodilla-spring-basic
 │ │ │ ├── SkypeMessageService.java
 │ │ │ ├── TextMessageService.java
 │ │ │ └── homework/...
-│ │ │
 │ │ ├── spring_dependency_injection/
 │ │ │ ├── SimpleApplication.java
 │ │ │ ├── SkypeMessageService.java
@@ -106,7 +105,6 @@ kodilla-spring-basic
 │ │ │ ├── FacebookMessageService.java
 │ │ │ ├── TextMessageService.java
 │ │ │ └── homework/...
-│ │ │
 │ │ ├── spring_configuration/
 │ │ │ ├── Animal.java
 │ │ │ ├── Dog.java
@@ -114,32 +112,28 @@ kodilla-spring-basic
 │ │ │ ├── Duck.java
 │ │ │ ├── AnimalFactory.java
 │ │ │ └── homework/...
-│ │ │
 │ │ ├── spring_scopes/
 │ │ │ ├── Task.java
 │ │ │ └── homework/Clock.java
-│ │ │
-│ │ └── Main.java
-│ │
-│ └── test/java/com/kodilla/spring/basic
-│ ├── spring_dependency_injection/...
+│ └── test/java/com/kodilla/spring/basic/
+│ ├── dependency_injection/...
 │ ├── spring_configuration/...
+│ ├── spring_dependency_injection/...
 │ ├── spring_scopes/...
 │ └── homework tests
-│
 └── resources/application.properties
 ```
 ---
 
 ## Getting Started
 
-### ✔ Requirements
+### Requirements
 - Java 21
 - Gradle (wrapper included)
 - IntelliJ IDEA
 - Spring Boot 3.2.5  
 
-### ▶ Run the Project
+### Run the Project
 
 **Linux / macOS**
 
@@ -184,19 +178,19 @@ tasks.named('test') {
 ---
 
 ## Spring Basics Covered in This Module
-### ✔ Dependency Injection
+### Dependency Injection
 - constructor, field, setter injection 
 - Message Services 
 - SimpleApplication examples
 
-### ✔ Bean Management
+### Bean Management
 - annotation-based components 
 - manual beans in AnimalFactory
 
-### ✔ Bean Qualifiers
+### Bean Qualifiers
 - handling multiple implementations
 
-### ✔ Bean Scopes
+### Bean Scopes
 - singleton 
 - prototype 
 - Clock homework exercise
@@ -204,29 +198,48 @@ tasks.named('test') {
 ---
 ## Test Suites Overview
 
-### ✔ Dependency Injection Tests
-- SimpleApplicationTestSuite 
-- CalculatorTestSuite 
-- ShippingCenterTestSuite
+### Dependency Injection Tests
+- **SimpleApplicationTestSuite** – verifies correct injection of dependencies in `SimpleApplication`  
+- **CalculatorTestSuite** – validates DI in homework calculator exercises  
+- **ShippingCenterTestSuite** – tests DI for `ShippingCenter` and related services  
 
-### ✔ Bean Configuration Tests
-- AnimalFactoryTestSuite 
-- CarConfigurationTestSuite (homework)
+**Checks performed:**  
+- Proper constructor, field, and setter injection  
+- Correct wiring of beans  
+- ApplicationContext loads without errors  
 
-### ✔ Scope Tests
-- TaskTestSuite 
-- ClockTestSuite
+---
 
-### Tests validate:
-- correct dependency injection 
-- correct bean creation 
-- correct scope behavior 
-- application context loading
+### Bean Configuration Tests
+- **AnimalFactoryTestSuite** – validates manual bean creation using `@Bean` in `AnimalFactory`  
+- **CarConfigurationTestSuite** (homework) – tests manual bean setup in car configuration exercises  
 
-### All tests use:
-- @SpringBootTest 
-- ApplicationContext 
-- AnnotationConfigApplicationContext
+**Checks performed:**  
+- Correct bean instantiation  
+- Proper configuration of annotation-based and manual beans  
+
+---
+
+### Scope Tests
+- **TaskTestSuite** – tests singleton behavior for `Task` class  
+- **ClockTestSuite** – tests prototype behavior for `Clock` class  
+
+**Checks performed:**  
+- Singleton beans return the same instance each time  
+- Prototype beans create a new instance per request  
+- Scopes work as intended within the Spring context  
+
+---
+
+**All tests use:**  
+- `@SpringBootTest`  
+- `ApplicationContext` or `AnnotationConfigApplicationContext`  
+- JUnit 5 (Jupiter) test runner  
+
+**Purpose:**  
+- Ensure correct dependency injection  
+- Validate bean creation and scope behavior  
+- Verify the application context loads without errors
 
 ---
 
@@ -256,6 +269,7 @@ GitHub: [https://github.com/joanna-kaminska-qa](https://github.com/joanna-kamins
 
 ## Version History
 
+- **0.3** – Expanded test coverage & structural improvements (achieved >60% total test coverage)
 - **0.2** – Minor improvements in structure (README added)
 - **0.1** – Initial upload
 
